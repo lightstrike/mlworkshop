@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ result }}</h1>
+    <p>{{ result.parameters }}</p>
+    <p>{{ result.r_squared }}</p>
+    <p>{{ result.chart_x_values }}</p>
+    <p>{{ result.chart_y_values }}</p>
+    <a href="{% url 'chronic:query' %}">Run new query</a>
+    <svg class="chart"></svg>
+{% endblock %}
+
+{% block body_js %}
+$(function() {
+var chart = c3.generate({
+      bindto: d3.select('.chart'),
+      data: {
+        x: 'xdata',
+        columns: [
+          ['xdata'].concat({{ result.chart_x_values }}),
+          ['ydata'].concat({{ result.chart_y_values }})
+        ]
+      }
+    }); 
+});
+{% endblock body_js %}

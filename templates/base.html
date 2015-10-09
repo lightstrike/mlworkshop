@@ -1,0 +1,26 @@
+<html>	
+	<head>
+        <title>{% block title %}Machine Learning Workshop{% endblock title %}</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					{% block content %}
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+        <script type="text/javascript">
+            {% block body_js %}
+            {% endblock body_js %}
+        </script>
+	</body>
+</html>
+
