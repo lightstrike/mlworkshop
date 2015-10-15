@@ -1,0 +1,9 @@
+# Django
+Django==1.8.5
+django-suit==0.2.15
+
+# Machine Learning
+pandas==0.16.2
+scipy==0.16.0
+numpy==1.10.0.post2
+scikit-learn==0.16.1

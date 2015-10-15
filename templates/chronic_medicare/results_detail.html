@@ -2,18 +2,26 @@
 
 {% block content %}
     <h1>{{ result }}</h1>
-    <p>{{ result.parameters }}</p>
-    <p>{{ result.r_squared }}</p>
-    <p>{{ result.chart_x_values }}</p>
-    <p>{{ result.chart_y_values }}</p>
+    <p>Parameters: {{ result.parameters }}</p>
+    <p>R-Squared: {{ result.r_squared }}</p>
+    <div class="row">
+        <div class="col-md-12">
+            <svg class="chart" style="height: 400px; width: 100%;"></svg>
+        </div>
+    </div>
     <a href="{% url 'chronic:query' %}">Run new query</a>
-    <svg class="chart"></svg>
+    <a href="{% url 'chronic:results_list' %}">Return to list</a>
+
 {% endblock %}
 
 {% block body_js %}
 $(function() {
 var chart = c3.generate({
       bindto: d3.select('.chart'),
+      size: {
+        height: 400,
+        width: 1000
+      },
       data: {
         x: 'xdata',
         columns: [

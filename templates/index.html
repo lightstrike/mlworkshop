@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>ML Workshop!</h1>
+    <a href="{% url 'chronic:query' %}">Run new query</a>
+    <a href="{% url 'chronic:results_list' %}">Review results list</a>
+{% endblock %}
+

@@ -60,3 +60,6 @@ target/
 # DB
 *.sqlite3
 *.db
+
+# VIM
+*.sw*

@@ -4,6 +4,9 @@ from .forms import ChronicConditionAnalysisQueryForm
 from .regression import run_linear_regression, save_linear_regression
 
 
+def home(request):
+    return render(request, 'index.html')
+
 def query_view(request):
     if request.method == 'POST':
         form = ChronicConditionAnalysisQueryForm(request.POST)

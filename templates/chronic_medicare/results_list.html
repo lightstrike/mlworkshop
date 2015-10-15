@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Chronic Condition Linear Regression Results</h1>
+    <a href="{% url 'chronic:query' %}">Make new query</a>
+    {% for result in results %}
+        <h3>{{ result }}</h3>
+        <p>Parameters: {{ result.parameters }}</p>
+        <p>R-Squared: {{ result.r_squared }}</p>
+        <a href="{% url 'chronic:results_detail' result.pk  %}">Review results</a>
+    {% endfor %}
+{% endblock %}
